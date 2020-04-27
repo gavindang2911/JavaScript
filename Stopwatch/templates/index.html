@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch by JavaScript</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='design.css') }} " />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class = "wrapper">
+        <h1>Stopwatch</h1>
+        <h2>Vanilla pure JavaScript</h2>
+        <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+        <button type="button" class="btn btn-primary">Start</button>
+        <button type="button" class="btn btn-secondary">Stop</button>
+        <button type="button" class="btn btn-danger">Reset</button>
+        <div>
+            <button type="button" class="btn btn-success" onclick="myFunction()">Click To Change Background Color</button>
+        </div>
+    </div>
+    <section class='dojo'>
+        <div class='quiz-body'>
+          <header>
+            <h1>Quiz</h1>
+          </header>
+          <div>
+            <button type="button" class="btn btn-primary" onclick="startQuiz()">Click To Start</button>
+        </div>
+        </div>
+      </section>
+      <script src="{{url_for('static', filename='function.js')}}"></script>
+</body>
+</html>
