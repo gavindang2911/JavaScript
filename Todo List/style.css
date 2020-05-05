@@ -1,100 +1,169 @@
-*{
-    padding: 10px;
-    margin: 0;
-    box-sizing: border-box;
-}
+
 body{
-    height: 100%;
-    background-color: #111;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    font-family: 'Titillium Web', sans-serif;
 }
-h1{
-    font-size: 4rem;
-    font-weight: 50;
-    margin: 5rem 0 4rem;
-    text-align: center;
-    color: #fff;
+/* ------------ container ------------ */
+.container{
+    padding:50px;
+    width:380px;
+    height: 800px;
+    margin:0 auto;
+}
+/* ------------ header ------------ */
+.header{
+    width: 380px;
+    height:200px;
+    background-image: url('../img/bg2.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+}
+.clear{
+    width : 30px;
+    height: 30px;
+    position: absolute;
+    right:20px;
+    top: 20px;
+}
+.clear i{
+    font-size: 30px;
+    color: #FFF;
+}
+.clear i:hover{
+    cursor: pointer;
+    text-shadow: 1px 3px 5px #000;
+    transform: rotate(45deg);
+}
+#date{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #FFF;
+    font-size: 25px;
+    font-family: 'Titillium Web', sans-serif;
+}
+/* ------------ content ------------ */
+.content{
+    width:380px;
+    height: 500px;
+    max-height:850px;
+    background-color: #FFF;
+    overflow: auto;
+}
+.content::-webkit-scrollbar { 
+    display: none; 
+}
+.content ul{
+    padding:0;
+    margin:0;
+}
+.item{
+    width:370px;
+    height: 45px;
+    min-height: 35px;
+    position: relative;
+    border-bottom: 1px solid rgba(221, 27, 27, 0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.item i.co{
+    position: relative;
+    font-size: 25px;
+    padding-left:5px;
+    left:15px;
+    top:10px;
+}
+.item i.co:hover{
+    cursor: pointer;
+}
+.fa-check-circle{
+    color:#6eb200;
+}
+.item p.text{
+    width:260px;
+    font-family: "Times New Roman", Times, serif;
+    position: absolute;
+    padding:0;
+    margin:10px;
+    font-size: 20px;
+    left:50px;
+    top:0px;
+    background-color: #FFF;
+    max-width:285px;
+}
+.lineThrough{
+    text-decoration: line-through;
+    color : #ccc;
+}
+.item i.de{
+    position: absolute;
+    font-size: 25px;
+    right:15px;
+    top:10px;
+}
+.item i.de:hover{
+    color:#af0000;
+    cursor: pointer;
 }
 
-.styling{
-    font-weight: 1000;
-    color: lime;
+/* ------------ add item ------------ */
+.add-to-do{
+    position: relative;
+    width: 360px;
+    height:70px;
+    background-color: #FFF;
+    padding: 10px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    
 }
-.input_div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.input_div .input{
-    padding: 0.5rem 3rem;
-    height: 50px;
-    outline: none;
-    background-color: #fff;
+.add-to-do input{
+    position: absolute;
+    left: 65px;
+    height: 55px;
+    width: 300px;
+    background-color: transparent;
     border: none;
-    width: 450px;
-    font-size: 1.5rem;
-    margin: 3.25rem;
-    border-radius: 25px;
+    font-size: 20px;
+    padding-left:10px;
 }
+.add-to-do input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+.add-to-do input::-moz-placeholder { /* Firefox 19+ */
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+.add-to-do input:-ms-input-placeholder { /* IE 10+ */
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+.add-to-do input:-moz-placeholder { /* Firefox 18- */
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+
 .addButton{
     height: 50px;
     width: 50px;
     border-radius: 25px;
     outline: none;
     border: none;
-    background-color: magenta;
-    color: lime;
+    background-color: orange;
+    color: #4162f6;
     margin: 0.25rem;
     cursor: pointer;
 }
 
 .addButton.hover{
     opacity: 0.7;
-}
-.refreshButton{
-    height: 50px;
-    width: 50px;
-    border-radius: 25px;
-    outline: none;
-    border: none;
-    background-color: magenta;
-    color: lime;
-    margin: 0.25rem;
-    cursor: pointer;
-}
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-    text-align: center;
-    margin-top: 0rem;
-}
-.item{
-    padding: 0.5rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 4px solid #fff;
-}
-.item_input{
-    background: none;
-    outline: none;
-    color: #fff;
-    border: none;
-    text-align: left;
-    font-size: 1.4rem;
-    width: 400px;
-}
-.editButton{
-    font-size: 1.4rem;
-    margin: 0 0.5rem;
-    background: none;
-    color: lime;
-    border: none;
-}
-.removeButton{
-    font-size: 1.4rem;
-    margin: 0 0.5rem;
-    background: none;
-    color: red;
-    border: none;
 }
