@@ -3,31 +3,29 @@
   margin: auto;
   text-align: center;
 }
-
 .dice {
   text-align: center;
   display: inline-block;
-
 }
 
 body {
-  background-color: #393E46;
+  background-color:#393E46 ;
+  text-align: center;
 }
 
 h1 {
-  margin: 30px;
+  margin-top: 80px;
   font-family: 'Lobster', cursive;
-  text-shadow: 5px 0 #232931;
   font-size: 8rem;
+  text-shadow: 5px 0 aliceblue;
   color: #4ECCA3;
 }
 
-p {
-  font-size: 2rem;
+h2 {
+  font-size: 3rem;
   color: #4ECCA3;
   font-family: 'Indie Flower', cursive;
 }
-
 img {
   width: 80%;
 }
@@ -39,3 +37,10 @@ footer {
   font-family: 'Indie Flower', cursive;
 
 }
+.button {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
