@@ -30,7 +30,6 @@ app.get("/", function(req, res){
 app.post("/", (req, res) =>{
     var newItem = req.body.newItem;
     // res.render("list", {newListItem: item});
-    console.log(newItem);
     var b = {id:count++, name: newItem};
     items.push(b);
     res.redirect("/");
