@@ -1,0 +1,50 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: beige;
+    font-family: 'Titillium Web', sans-serif;
+}
+/* ------------ container ------------ */
+.container{
+    padding:70px;
+    width:380px;
+    height: 800px;
+    margin:0 auto;
+}
+/* ------------ header ------------ */
+.header{
+    width: 380px;
+    height:200px;
+    background-image: url('../img/bg2.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+}
+
+.clear{
+    width : 30px;
+    height: 30px;
+    position: absolute;
+    right:20px;
+    top: 20px;
+}
+.clear i{
+    font-size: 30px;
+    color: #FFF;
+}
+
+.clear i:hover{
+    cursor: pointer;
+    text-shadow: 1px 3px 5px #000;
+    transform: rotate(45deg);
+}
+
+h1{
+   position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #FFF;
+    font-size: 30px;
+    font-family: 'Titillium Web', sans-serif;
+}

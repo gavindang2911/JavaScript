@@ -11,6 +11,7 @@ var count = 2;
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("public")); 
 
 
 app.get("/", function(req, res){
@@ -27,7 +28,6 @@ app.get("/", function(req, res){
 });
 
 app.post("/", (req, res) =>{
-    console.log("asdasd");
     var newItem = req.body.newItem;
     // res.render("list", {newListItem: item});
     console.log(newItem);
@@ -49,6 +49,6 @@ app.get("/search", (req, res)=>{
 })
 
 
-app.listen(3000, ()=>{
+app.listen(5500, ()=>{
     console.log("Starting server on port 3000");
 });
