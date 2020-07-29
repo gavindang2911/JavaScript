@@ -7,6 +7,8 @@ var items = [
     { id: 1, name: 'Read book'},
     { id: 2, name: 'Do homework'}
 ];
+
+let workItem = [];
 var count = 2;
 app.set('view engine', 'ejs');
 
@@ -24,15 +26,23 @@ app.get("/", function(req, res){
     }
     var day = today.toLocaleDateString("en-US", option);
 
-    res.render("list", {kindOfDay: day, newListItems: items});
+    res.render("list", {listTitle: day, newListItems: items});
 });
 
 app.post("/", (req, res) =>{
-    var newItem = req.body.newItem;
-    // res.render("list", {newListItem: item});
-    var b = {id:count++, name: newItem};
-    items.push(b);
-    res.redirect("/");
+
+    let newItem = req.body.newItem;
+    if (req.body.list === "Work") {
+        let a = {name: newItem};
+        workItem.push(a);
+        res.redirect("/work");
+    } else {
+        // res.render("list", {newListItem: item});
+        var b = {id:count++, name: newItem};
+        items.push(b);
+        res.redirect("/");
+    }
+        
 })
 
 app.get("/search", (req, res)=>{
@@ -42,11 +52,27 @@ app.get("/search", (req, res)=>{
     });
 
     res.render("list", {
-        kindOfDay: "",
+        listTitle: "",
         newListItems: matchedItem
     });
 })
 
+app.get("/work", (req, res) => {
+    res.render("list", {
+        listTitle: "Work List",
+        newListItems: workItem
+    });
+})
+
+app.post("/work", (req, res) => {
+    let item = req.body.newItem;
+    workItem.push(item);
+    res.redirect("/work");
+})
+
+app.get("/about", (req, res) => {
+    res.render("about");
+})
 
 app.listen(5500, ()=>{
     console.log("Starting server on port 3000");
