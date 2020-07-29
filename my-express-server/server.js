@@ -6,7 +6,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res){
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile(__dirname + "/public/index.html");
 });
 
 app.post("/", function(req, res){
@@ -14,7 +14,7 @@ app.post("/", function(req, res){
     var num2 = Number(req.body.num2);
     var result = num1 + num2;
 
-    res.send("This is the result " + result);
+    res.send("This is the result of the calculation " + result);
 })
 
 app.get("/bmiCalculator", function(req, res){
