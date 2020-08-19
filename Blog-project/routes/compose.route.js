@@ -1,19 +1,12 @@
 const express = require('express');
 const db = require('../db');
 
+var controller = require('../controllers/compose.controller')
+
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.render("compose");
-})
+router.get("/", controller.index);
   
-router.post("/", (req, res) => {
-    var post = {
-        title: req.body.postTitle,
-        content: req.body.postBody
-    };
-    db.get('articles').push(post).write();
-    res.redirect("/");
-})
+router.post("/", controller.create);
 
 module.exports = router;

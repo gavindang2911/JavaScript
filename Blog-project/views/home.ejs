@@ -2,6 +2,8 @@
     <h1>Home</h1>
 
     <h2><%= startingContent %> </h2>
+    <button class="btn btn-primary" onclick="location.href='/compose'" type="button">
+        Create new post</button>
 
     <%  articles.forEach(function(post){ %>
         <h1><%= post.title %> </h1>
