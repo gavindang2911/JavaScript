@@ -1,0 +1,19 @@
+<%- include("../partials/header") -%> 
+    <h1>Login</h1>
+    <%  if (errors.length > 0) {  %>
+        <% errors.forEach(function (error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+        <% }) %>
+    <% } %>
+    <form class="" method="POST" autocomplete="off">
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" name="email" class="form-control" placeholder="Enter email" value="<%= values.email %>">
+            <br>
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" placeholder="Password" value="<%= values.password %>">
+        </div>
+        <button class="btn btn-primary" type="submit" name="button">Login</button>
+    </form>
+    
+<%- include("../partials/footer") -%> 

@@ -1,12 +1,12 @@
 const express = require('express');
-const db = require('../db');
 
-var controller = require('../controllers/compose.controller')
+var controller = require('../controllers/compose.controller');
+var validate = require('../validate/compose.validate');
 
 const router = express.Router();
 
 router.get("/", controller.index);
   
-router.post("/", controller.create);
+router.post("/", validate.create ,controller.create);
 
 module.exports = router;

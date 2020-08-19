@@ -6,6 +6,7 @@ const ejs = require("ejs");
 const _ = require("lodash");
 
 const composeRoutes = require('./routes/compose.route');
+const authRoutes = require('./routes/auth.route');
 
 const db = require('./db');
 
@@ -22,6 +23,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.use('/compose', composeRoutes);
+app.use('/auth', authRoutes);
 
 app.get("/", (req, res) => {
   res.render("home", {

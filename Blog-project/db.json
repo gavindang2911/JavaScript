@@ -2,7 +2,9 @@
   "articles": [
     {
       "title": "Day 1",
-      "content": "Testing, This is day 1"
+      "content": "Testing, This is day 1",
+      "email": "hd2911@gmail.com",
+      "password": "123456"
     }
   ]
 }

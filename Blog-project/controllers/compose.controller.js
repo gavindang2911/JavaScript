@@ -7,21 +7,7 @@ module.exports.index = (req, res) => {
 };
 
 module.exports.create = (req, res) => {
-    var errors = [];
-    if (!req.body.postTitle) {
-        errors.push("Title is required");
-    }
-
-    if (!req.body.postBody) {
-        errors.push('Body is required');
-    }
-
-    if (errors.length) {
-        res.render("compose", {
-            errors: errors
-        });
-        return;
-    }
+    
     var post = {
         title: req.body.postTitle,
         content: req.body.postBody
