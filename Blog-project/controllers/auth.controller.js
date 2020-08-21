@@ -47,6 +47,7 @@ module.exports.postLogin = (req, res) => {
         });
         return;
     }
+    res.cookie('articleTitle', user.title )
     res.redirect('/');
 
 };
