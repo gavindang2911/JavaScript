@@ -5,12 +5,17 @@
 .navbar {
     padding-top: 15px;
     padding-bottom: 15px;
+    padding-left: 15px;
     border: 0;
     border-radius: 0;
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
 }
+.navbar-brand {
+    padding-left: 70px;
+}
+
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
 }
@@ -38,5 +43,9 @@ h1{
     font-size: 45px;
 }
 h2{
-    font-size: 25px;
+    font-size: 32px;
+}
+
+.createPost {
+    padding-top: 20px;
 }
