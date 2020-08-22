@@ -12,7 +12,7 @@ let app = express();
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(cookieParser());
+app.use(cookieParser('asdgawefawb12141'));
 app.use(express.static("public"));
 
 const authMiddleware = require('./middlewares/auth.middleware');
