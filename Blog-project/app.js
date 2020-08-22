@@ -1,4 +1,5 @@
 //jshint esversion:6
+require('dotenv').config();
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -12,7 +13,7 @@ let app = express();
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(cookieParser('asdgawefawb12141'));
+app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(express.static("public"));
 
 const authMiddleware = require('./middlewares/auth.middleware');
