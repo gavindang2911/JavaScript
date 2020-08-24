@@ -33,6 +33,35 @@ app.get("/about", aboutController.index);
 const contactController = require('../Blog-project/controllers/contact.controller');
 app.get("/contact", contactController.index);
 
+
+var products = [
+  {
+    image: "",
+    cartTitle: "This is title",
+    cartDescription: "asddgdah" 
+  },
+  {
+    image: "",
+    cartTitle: "This is title",
+    cartDescription: "asddgdah" 
+  },
+  {
+    image: "",
+    cartTitle: "This is title",
+    cartDescription: "asddgdah" 
+  },{
+    image: "",
+    cartTitle: "This is title",
+    cartDescription: "asddgdah" 
+  }
+];
+
+app.get("/products", (req, res) => {
+  res.render("product", {
+    products: products
+  });
+});
+
 const postsRouter = require('./routes/posts.route');
 app.use("/posts/:postName",authMiddleware.requireAuth, postsRouter);
 

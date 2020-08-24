@@ -1,0 +1,18 @@
+<%- include('partials/header') -%> 
+
+    <% products.forEach(function(item){ %>
+        <div class="card" style="width: 18rem; display:inline-flex; margin:30px 0px 0px 50px;">
+            <div>
+                <img class="card-img-top" src=<%= item.image %>  alt="Card image cap">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"><%= item.cartTitle %></h5>
+                <p class="card-text"><%= item.cartDescription %></p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+    <% }) %>
+
+    
+<%- include("partials/footer") -%> 
