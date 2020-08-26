@@ -1,6 +1,11 @@
 {
   "articles": [
     {
+      "title": "Wed, 26 Aug 2020",
+      "content": "Test file upload (image uploaded successfully)",
+      "image": "uploads/9c75b16aa77e6381822dcf26ef89c833"
+    },
+    {
       "title": "Day 1",
       "content": "Testing, This is day 1",
       "email": "hd2911@gmail.com",

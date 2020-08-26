@@ -34,11 +34,11 @@ const contactController = require('../Blog-project/controllers/contact.controlle
 app.get("/contact", contactController.index);
 
 const postsRouter = require('./routes/posts.route');
-app.use("/posts/:postName",authMiddleware.requireAuth, postsRouter);
+app.use("/posts",authMiddleware.requireAuth, postsRouter);
 
 const productsRoute = require('./routes/products.route');
 app.use('/products', productsRoute);
 
-app.listen(5000, function() {
-  console.log("Server started on port 5000");
+app.listen(3000, function() {
+  console.log("Server started on port 3000");
 });

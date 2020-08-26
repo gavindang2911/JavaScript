@@ -1,4 +1,7 @@
 <%- include("partials/header") -%> 
+    <%  if (image) { %>
+        <img src="http://localhost:3000/<%= image %>" width="200">
+    <% } %>
     <h1><%= title  %> </h1>
     <p><%= content  %> </p>
 <%- include("partials/footer") -%> 

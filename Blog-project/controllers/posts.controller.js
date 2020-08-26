@@ -1,5 +1,14 @@
+const express = require("express");
 const db = require('../db');
+const bodyParser = require("body-parser");
+
 const _ = require("lodash");
+let app = express();
+
+
+app.use(bodyParser.urlencoded({extended: true}));
+
+
 
 module.exports.index = (req, res) => {
     const requestedTitle = _.lowerCase(req.params.postName);
@@ -10,7 +19,8 @@ module.exports.index = (req, res) => {
       if (storedTitle === requestedTitle) {
         res.render("post", {
           title:post.title,
-          content:post.content
+          content:post.content,
+          image: post.image
         });
       }
     })

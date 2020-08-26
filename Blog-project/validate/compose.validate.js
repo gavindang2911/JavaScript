@@ -1,10 +1,10 @@
 module.exports.create = function(req, res, next) {
     var errors = [];
-    if (!req.body.postTitle) {
+    if (!req.body.title) {
         errors.push("Title is required");
     }
 
-    if (!req.body.postBody) {
+    if (!req.body.content) {
         errors.push('Body is required');
     }
 
