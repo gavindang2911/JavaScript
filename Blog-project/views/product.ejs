@@ -37,6 +37,10 @@
                     <div class="card-body">
                         <h5 class="card-title mt-2"><%=product.name%></h5>
                         <p class="card-text"><%=product.description%></p>
+                        
+                        <div class="mt-4">
+                            <a href="/cart/add/<%= product.id %>" class="btn btn-outline-primary">Add to cart</a>
+                        </div>
                     </div>
                 </div>
             </div>

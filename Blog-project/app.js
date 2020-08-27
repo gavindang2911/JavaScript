@@ -8,15 +8,21 @@ const ejs = require("ejs");
 const _ = require("lodash");
 const db = require('./db');
 
-let app = express();
+const authMiddleware = require('./middlewares/auth.middleware');
+const sessionMiddleware = require('./middlewares/session.middleware'); 
 
+let app = express();
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(express.static("public"));
 
-const authMiddleware = require('./middlewares/auth.middleware');
+app.use(sessionMiddleware);
+
+const cartRoutes = require('./routes/cart.route');
+app.use('/cart', cartRoutes);
+
 
 const mainRoutes = require('./routes/main.route');
 app.use('/', mainRoutes);

@@ -3,7 +3,7 @@
     {
       "title": "Wed, 26 Aug 2020",
       "content": "Test file upload (image uploaded successfully)",
-      "image": "uploads/9c75b16aa77e6381822dcf26ef89c833"
+      "image": "uploads/84f8a8dfd348f334b92a2424dfa39780"
     },
     {
       "title": "Day 1",
@@ -612,6 +612,11 @@
       "image": "https://loremflickr.com/320/240",
       "name": "Split Peas - Green, Dry",
       "description": "nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam"
+    }
+  ],
+  "session": [
+    {
+      "id": "EUE1sMmVt"
     }
   ]
 }
