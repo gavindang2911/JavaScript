@@ -1,7 +1,11 @@
 {
   "articles": [
     {
-      "title": "Wed, 26 Aug 2020",
+      "title": "30 August, 2020. Install MongoDB on Ubuntu 18.04 ",
+      "content": "30 August, 2020. Install MongoDB on Ubuntu 18.04 \r\nhttps://tecadmin.net/install-mongodb-on-ubuntu/\r\nhttps://hevodata.com/blog/install-mongodb-on-ubuntu/\r\n\r\nFollow all the steps to the link attached above, \r\nSystemd (systemctl) is not supported in WSL. MongoDB and Docker later on. So instead using systemctl, we can replace with the service\r\n   ->> https://stackoverflow.com/questions/48092353/failed-to-start-mongod-service-unit-mongod-service-not-found\r\n   ->> If it is still not working, then try to install the MongoDB server first (sudo apt-get install mongodb-server)\r\n          , then do install the MongoDB again by (sudo service mongodb start/status), Then start by (mongo)\r\n\r\nSyntax in MongoDB Shell:\r\n1. mongo\r\n2. show dbs/databases;\r\n3. use sampleDatabaseHere;\r\n   -> show collection; (Show all rows in the database)\r\n   -> db.row1/2.find({});\r\n   -> db.row1.updateOne({_id:2}, {$set: {stock:12}})\r\n   -> db.row1.deleteOne({_id:2})\r\n4. db (SHOW which database u are in)"
+    },
+    {
+      "title": "26 Aug, 2020. File upload",
       "content": "Test file upload (image uploaded successfully)",
       "image": "uploads/84f8a8dfd348f334b92a2424dfa39780"
     },
@@ -617,6 +621,17 @@
   "session": [
     {
       "id": "EUE1sMmVt"
+    },
+    {
+      "id": "eIpMBe1Ju",
+      "cart": {
+        "81dc41dc-4560-4f33-b425-b6f21b82fbd1": 4,
+        "a4539314-4519-463c-9871-b83c68b76719": 1,
+        "196d352b-ff48-47d5-a64b-4c132691cd03": 1
+      }
+    },
+    {
+      "id": "zCsb3Myf6"
     }
   ]
 }

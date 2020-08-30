@@ -10,6 +10,7 @@
     border-radius: 0;
     margin-bottom: 0;
     font-size: 12px;
+    font-weight: 500;
     letter-spacing: 5px;
 }
 .navbar-brand {
@@ -17,6 +18,9 @@
 }
 
 .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+.navbar-brand li a:hover {
     color: #1abc9c !important;
 }
 
