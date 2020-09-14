@@ -33,38 +33,52 @@ const item3 = new Item({
 
 const defaultItems = [item1, item2, item3];
 
-Item.insertMany(defaultItems, function(err){  
-    if(err) {
-        console.log(err);
-    } else {
-        console.log("Successfully saved default item to database")
-    }
-});
+
 
 app.get("/", function(req, res){
     // let day = date.getDay();
     // res.render("list", {listTitle: day, newListItems: items});
 
+    Item.find({}, function(err, foundItems){
 
-    res.render("list", {listTitle: "Today", newListItems: items});
+        if (foundItems.length === 0) {
+            Item.insertMany(defaultItems, function(err){  
+                if(err) {
+                    console.log(err);
+                } else {
+                    console.log("Successfully saved default item to database")
+                }
+            });
+            res.redirect("/");
+        } else {
+            res.render("list", {listTitle: "Today", newListItems: foundItems});
+        }
+    });
+
 
 });
 
 app.post("/", (req, res) =>{
 
-    let newItem = req.body.newItem;
-    if (req.body.list === "Work") {
-        let a = {name: newItem};
-        workItem.push(a);
-        res.redirect("/work");
-    } else {
-        // res.render("list", {newListItem: item});
-        var b = {id:count++, name: newItem};
-        items.push(b);
-        res.redirect("/");
-    }
-        
-})
+    const newItemName = req.body.newItem;
+    const item = new Item({
+        name: newItemName
+    });
+    item.save();
+    res.redirect("/");
+
+});
+
+app.post("/delete", (req, res) => {
+    const checkedItemId = req.body.checkbox;
+
+    Item.findByIdAndRemove(checkedItemId, function(err) {
+        if(!err) {
+            console.log("Successfully deleted item");
+            res.redirect("/");
+        }
+    });
+});
 
 app.get("/search", (req, res)=>{
     var q = req.query.q;
@@ -94,6 +108,8 @@ app.post("/work", (req, res) => {
 app.get("/about", (req, res) => {
     res.render("about");
 })
+
+
 
 app.listen(5500, ()=>{
     console.log("Starting server on port 5500");
