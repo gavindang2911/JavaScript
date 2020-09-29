@@ -4,9 +4,9 @@ require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser');
-const ejs = require("ejs");
-const _ = require("lodash");
-const db = require('./db');
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGO_URL, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 
 const authMiddleware = require('./middlewares/auth.middleware');
 const sessionMiddleware = require('./middlewares/session.middleware'); 

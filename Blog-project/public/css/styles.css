@@ -20,9 +20,6 @@
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
 }
-.navbar-brand li a:hover {
-    color: #1abc9c !important;
-}
 
 .footer-padding {
 	padding-bottom: 60px;
