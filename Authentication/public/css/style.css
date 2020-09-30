@@ -3,15 +3,25 @@ body{
 }
 
 .centered {
-    padding-top: 200px;
+    padding-top: 180px;
     text-align: center;
 }
-
+.login {
+	padding-top: 50px;
+    text-align: center;
+}
 .login-container{
 	align-content: center;
 	justify-content: center;
 	max-width: 800px;
-	padding-top: 100px;
+	padding-top: 30px;
+	padding-left: 480px;
+}
+.register-container{
+	align-content: center;
+	justify-content: center;
+	max-width: 800px;
+	padding-top: 30px;
 	padding-left: 400px;
 }
 
