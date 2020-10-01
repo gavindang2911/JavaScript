@@ -139,6 +139,23 @@ app.post("/login", (req, res) => {
         return;
     }
 
+    // lv5
+    const user = new User({
+        username:username,
+        password:password
+    });
+
+    req.login(user, function(err) {
+        if (err) {
+            console.log("asfasf");
+            
+        } else {
+            passport.authenticate("local")(req, res, function(){
+                res.redirect("/secrets");
+            })
+        }
+    })
+
     // lv4
     // User.findOne({email:username}, (err, foundUser) => {
     //     if (err) {
