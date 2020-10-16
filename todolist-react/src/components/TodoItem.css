@@ -1,0 +1,21 @@
+.todo-item{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    color: #4d4d4d;
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    list-style: none;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    
+}
+
+
+
+.todo-item-complete {
+    text-decoration: line-through;
+    opacity: .3;
+}
