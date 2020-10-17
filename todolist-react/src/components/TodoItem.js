@@ -7,6 +7,10 @@ function TodoItem(props) {
         props.setItems(props.items.filter((el) => el.id !== props.item.id))
     };
 
+    const completeHandler = () => {
+        
+    }
+
     return (
         <div className="todo-item"> 
             <div className="todo-item-text">
