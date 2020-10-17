@@ -6,13 +6,51 @@
     display: flex;
     border-bottom: 1px solid lightgray;
     list-style: none;
-    align-items: center;
-    margin: auto;
+
     margin-bottom: 20px;
-    justify-content: space-between;
-    
+}
+.todo-item i.co{
+    position: relative;
+    font-size: 25px;
+    padding-left:5px;
+    left:15px;
+    top:10px;
+}
+.todo-item i.co:hover{
+    cursor: pointer;
 }
 
+.todo-item-text{
+    flex: 1;
+    color: red;
+}
+.todo-item-button {
+    display: flex;
+    flex: 0;
+}
+
+.complete-btn {
+    height: 30px;
+    width: 30px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-color: orange;
+    color: #4162f6;
+    margin: 0.25rem;
+    cursor: pointer;
+}
+.trash-btn {
+    height: 30px;
+    width: 30px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-color: darkgrey;
+    color: white;
+    margin: 0.25rem;
+    cursor: pointer;
+}
 
 
 .todo-item-complete {

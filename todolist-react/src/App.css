@@ -1,10 +1,75 @@
 .App {
-  text-align: center;
+  background-color: black;
 }
 .container {
-  justify-content: center;
-  margin-top: 50px;
-  padding-left: 400px;
-  max-width: 40%;
+  padding:50px;
+  width:380px;
+  height: 800px;
+  margin: auto;
+}
+
+.header{
+  width: 380px;
+  height:200px;
+  background-color:lightgray;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 15px 15px 0 0;
+  position: relative;
+}
+.addToDo{
+  position: relative;
+  width: 360px;
+  height:55px;
+  background-color: honeydew;
+  padding: 10px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+.addToDo input{
+  position: absolute;
+  left: 65px;
+  height: 55px;
+  width: 250px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  padding-left:10px;
+}
+
+.addToDo input::-moz-placeholder { /* Firefox 19+ */
+  color: #4162f6;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 20px;
+}
+.addToDo input:-ms-input-placeholder { /* IE 10+ */
+  color: #4162f6;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 20px;
+}
+.addToDo input:-moz-placeholder { /* Firefox 18- */
+  color: #4162f6;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 20px;
+}
+
+.addButton{
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-color: orange;
+  color: #4162f6;
+  margin: 0.25rem;
+  cursor: pointer;
+  border-bottom: 1px solid lightgray;
+}
+
+.addButton.hover{
+  opacity: 0.7;
+}
+.content {
+  padding-left: 20px;
+  background-color: honeydew;
 }
 
