@@ -10,10 +10,12 @@ function App() {
 
   const addItem = (event) => {
     event.preventDefault();
-    setItems([...items, input]);
+    setItems([
+      ...items, ({text:input, isComplete:false, id:Math.random() * 1000})
+    ]);
     setInput('');
   }
-  console.log(items)
+ 
 
   return (
     <div className="App">
@@ -32,7 +34,7 @@ function App() {
         <div className="content">
           {
             items.map((item, id) => (
-              <TodoItem key={id} text={item} />
+              <TodoItem key={id} item={item} setItems={setItems} items={items}/>
             ))
           }
         </div>
