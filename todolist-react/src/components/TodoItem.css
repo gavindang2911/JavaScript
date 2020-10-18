@@ -22,7 +22,7 @@
 
 .todo-item-text{
     flex: 1;
-    color: red;
+    color: white;
 }
 .todo-item-button {
     display: flex;

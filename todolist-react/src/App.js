@@ -1,22 +1,36 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import TodoItem from './components/TodoItem';
+import { db } from './firebase';
 
 function App() {
   const [items, setItems] = useState([]);
 
   const [input, setInput] = useState('');
 
+  useEffect(() => {
+    db.collection("todos").onSnapshot(snapshot => {
+      setItems(snapshot.docs.map(doc => 
+        ({
+          id:doc.id,
+          item: doc.data()
+        }),
+      ))
+    })
+  }, [])
+
 
   const addItem = (event) => {
     event.preventDefault();
-    setItems([
-      ...items, ({text:input, isComplete:false, id:Math.random() * 1000})
-    ]);
+    
+    db.collection('todos').add({
+      text: input,
+      isComplete: false
+    });
+
     setInput('');
   }
  
-
   return (
     <div className="App">
       <div className="container">
@@ -27,14 +41,15 @@ function App() {
               <div id="date"></div>
         </div>
         <div className="addToDo">
-          <input id="input" placeholder="Add to to " value={input} onChange={event => setInput(event.target.value)}/>
+          <input id="input" placeholder="Add to to " autoComplete="off" value={input} onChange={event => setInput(event.target.value)}/>
           <button className="addButton" type="submit" disabled={!input} onClick={addItem}><i class="fas fa-plus"></i></button>
         </div>
 
         <div className="content">
           {
-            items.map((item, id) => (
-              <TodoItem key={id} item={item} setItems={setItems} items={items}/>
+            items.map((element, id) => (
+              <TodoItem key={id} item={element.item} setItems={setItems} items={items}/>
+              
             ))
           }
         </div>
