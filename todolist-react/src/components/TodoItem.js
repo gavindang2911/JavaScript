@@ -1,10 +1,17 @@
 import React from 'react'
 import './TodoItem.css'
+import { db } from '../firebase';
 
 function TodoItem(props) {
 
     const deleteHandler = () => {
-        props.setItems(props.items.filter((el) => el.id !== props.item.id))
+        // props.setItems(props.items.filter((el) => el.id !== props.item.id))
+
+        db.collection("todos").doc(props.itemId).delete().then(function() {
+            console.log("Document successfully deleted!");
+        }).catch(function(error) {
+            console.error("Error removing document: ", error);
+        });
     };
 
     const completeHandler = () => {
@@ -17,7 +24,6 @@ function TodoItem(props) {
             return el;
         }))
     }
-    console.log(props.items)
 
     return (
         <div className="todo-item"> 

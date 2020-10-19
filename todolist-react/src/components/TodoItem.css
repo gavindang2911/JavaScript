@@ -21,6 +21,7 @@
 }
 
 .todo-item-text{
+    padding-left: 20px;
     flex: 1;
     color: white;
 }

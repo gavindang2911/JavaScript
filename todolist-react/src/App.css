@@ -23,7 +23,7 @@
   height:55px;
   background-color:#449069;
   padding: 10px;
-  border-top: 1px solid rgba(0,0,0,0.1);
+
 }
 .addToDo input{
   position: absolute;
@@ -58,7 +58,19 @@
   opacity: 0.7;
 }
 .content {
-  padding-left: 20px;
   background-color: #449069;
 }
 
+.title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+  font-style: oblique;
+  padding-left: 70px;
+  padding-top: 20px;
+}
+
+.clear {
+  padding-left: 30px;
+  padding-top: 20px;
+  size: 50px;
+}

@@ -36,9 +36,11 @@ function App() {
       <div className="container">
         <div className="header">
               <div className="clear">
-                  <i className="fas fa-sync-alt 4x"></i>
+                  <i className="fas fa-sync-alt fa-lg"></i>
               </div>
-              <div id="date"></div>
+              <div className="title">
+                <h2>To do list</h2>
+              </div>
         </div>
         <div className="addToDo">
           <input id="input" placeholder="Add to to " autoComplete="off" value={input} onChange={event => setInput(event.target.value)}/>
@@ -48,7 +50,7 @@ function App() {
         <div className="content">
           {
             items.map((element, id) => (
-              <TodoItem key={id} item={element.item} setItems={setItems} items={items}/>
+              <TodoItem key={id} itemId={element.id} item={element.item} setItems={setItems} items={items}/>
               
             ))
           }
