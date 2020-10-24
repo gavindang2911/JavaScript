@@ -16,9 +16,13 @@ function TodoItem(props) {
 
     const completeHandler = () => {
         props.setItems(props.items.map(el => {
-            if (el.id === props.item.id) {
+            if (el.id === props.itemId) {
                 return {
-                    ...el, isComplete:!el.isComplete
+                    ...el, 
+                    item: {
+                        ...el.item,
+                        isComplete:!el.item.isComplete
+                    }
                 }
             }
             return el;
@@ -28,8 +32,8 @@ function TodoItem(props) {
     return (
         <div className="todo-item"> 
             <div className={`todo-item-text 
-                ${props.item.isComplete ? "todo-item-complete" : ""}`}>
-                <li>{props.item.text}</li>
+                ${props.isComplete ? "todo-item-complete" : ""}`}>
+                <li>{props.text}</li>
             </div>
             <div className="todo-item-button">
                 <button onClick={completeHandler} className="complete-btn">

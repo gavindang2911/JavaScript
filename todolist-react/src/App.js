@@ -9,14 +9,26 @@ function App() {
   const [input, setInput] = useState('');
 
   useEffect(() => {
-    db.collection("todos").onSnapshot(snapshot => {
-      setItems(snapshot.docs.map(doc => 
-        ({
-          id:doc.id,
-          item: doc.data()
-        }),
-      ))
-    })
+    // db.collection("todos").onSnapshot(snapshot => {
+    //   setItems(snapshot.docs.map(doc => 
+    //     ({
+    //       id:doc.id,
+    //       item: doc.data()
+    //     }),
+    //   ))
+    // })
+    db.collection("todos").get().then(function(querySnapshot) {
+      const newItem = [];
+      querySnapshot.forEach(function(doc) {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
+          newItem.push({
+            id:doc.id,
+            ...doc.data()
+          });
+      });
+      setItems(newItem);
+    });
   }, [])
 
 
@@ -28,9 +40,11 @@ function App() {
       isComplete: false
     });
 
+
+
     setInput('');
   }
- 
+  console.log(items);
   return (
     <div className="App">
       <div className="container">
@@ -50,7 +64,7 @@ function App() {
         <div className="content">
           {
             items.map((element, id) => (
-              <TodoItem key={id} itemId={element.id} item={element.item} setItems={setItems} items={items}/>
+              <TodoItem key={id} itemId={element.id} text={element.text} setItems={setItems} items={items}/>
               
             ))
           }
