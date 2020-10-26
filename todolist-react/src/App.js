@@ -75,8 +75,6 @@ function App() {
     // let date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
     var options = { month: 'long', day: 'numeric' };
     return <h2> {new Date(today).toLocaleDateString([],options)} </h2>;
-
-    // return <h2>{date}</h2>;
   }
 
   const deleteAll = () => {
