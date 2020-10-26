@@ -3,7 +3,6 @@ import './TodoItem.css'
 import { db } from '../firebase';
 
 function TodoItem(props) {
-
     const deleteHandler = () => {
         // props.setItems(props.items.filter((el) => el.id !== props.item.id))
 
@@ -12,7 +11,14 @@ function TodoItem(props) {
         }).catch(function(error) {
             console.error("Error removing document: ", error);
         });
+        props.setItems(props.items.filter((el) => 
+            el.id !== props.itemId
+        ));
+        
     };
+
+
+
 
     const completeHandler = () => {
         props.setItems(props.items.map(el => {
@@ -29,11 +35,12 @@ function TodoItem(props) {
         }))
     }
 
+
     return (
         <div className="todo-item"> 
             <div className={`todo-item-text 
-                ${props.isComplete ? "todo-item-complete" : ""}`}>
-                <li>{props.text}</li>
+                ${props.item.isComplete ? "todo-item-complete" : ""}`}>
+                <li>{props.item.text}</li>
             </div>
             <div className="todo-item-button">
                 <button onClick={completeHandler} className="complete-btn">
