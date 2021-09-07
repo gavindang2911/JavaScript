@@ -3,6 +3,10 @@
 
 ## Blog app
 ### A basic blog web application powered by Node.js on the back end, Bootstrap on the front end, and MongoDB as the data store
+
+### [Demo](https://blog-app-expressjs.herokuapp.com/)
+##### /hd2911@gmail.com/123456 for testing
+
 #
 #### Login page
 ![image](https://user-images.githubusercontent.com/57620352/94566982-d7a3a580-021f-11eb-91e9-fb018fd488f2.png)
